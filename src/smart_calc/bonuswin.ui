@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>bonusWin</class>
+ <widget class="QDialog" name="bonusWin">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>608</width>
+    <height>457</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string/>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_3">
+   <item row="0" column="0">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="styleSheet">
+      <string notr="true">/* Style the tab using the tab sub-control. Note that
+    it reads QTabBar _not_ QTabWidget */
+QTabBar::tab {
+                          background-color: #FF9500;
+                          color: white;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+                         
+    min-width: 8ex;
+    padding: 2px;
+	margin-left: 4 px;
+}
+
+QTabBar::tab:selected, QTabBar::tab:hover {
+ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0.55665 rgba(255, 96, 0, 255), stop:1 rgba(255, 255, 79, 255)) }
+
+</string>
+     </property>
+     <property name="currentIndex">
+      <number>1</number>
+     </property>
+     <widget class="QWidget" name="tab">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <attribute name="title">
+       <string>Credit</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_5">
+       <item row="0" column="0">
+        <layout class="QGridLayout" name="gridLayout_4">
+         <item row="2" column="4" rowspan="7">
+          <widget class="QTableWidget" name="tableWidget_monthlyPayment">
+           <property name="maximumSize">
+            <size>
+             <width>300</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="dragDropOverwriteMode">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="2" colspan="2">
+          <widget class="QLineEdit" name="lineEdit_totalPay">
+           <property name="maximumSize">
+            <size>
+             <width>400</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="2" colspan="2">
+          <widget class="QLineEdit" name="lineEdit_overpayment">
+           <property name="maximumSize">
+            <size>
+             <width>400</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0" rowspan="2">
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>Type</string>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="0" colspan="2">
+          <widget class="QLabel" name="label_6">
+           <property name="maximumSize">
+            <size>
+             <width>200</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Total interest paid</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0" colspan="2">
+          <widget class="QLabel" name="label_3">
+           <property name="maximumSize">
+            <size>
+             <width>200</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Interest rate (%)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="0" colspan="2">
+          <widget class="QLabel" name="label_7">
+           <property name="maximumSize">
+            <size>
+             <width>200</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Total principal paid</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="4" alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="label_8">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>10</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Monthly payment</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2" colspan="2">
+          <widget class="QSpinBox" name="spinBox_monthTerm">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>400</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="maximum">
+            <number>125</number>
+           </property>
+           <property name="value">
+            <number>12</number>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1" colspan="3">
+          <widget class="QRadioButton" name="radioButton_different">
+           <property name="text">
+            <string>Differentiated</string>
+           </property>
+           <property name="checked">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2" colspan="2">
+          <widget class="QSpinBox" name="spinBox_creditTtl">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>400</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="maximum">
+            <number>999999999</number>
+           </property>
+           <property name="singleStep">
+            <number>1000</number>
+           </property>
+           <property name="value">
+            <number>10000</number>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0" colspan="4">
+          <widget class="QPushButton" name="pushButton_result">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+                          background-color: #FF9500;
+                          color: white;
+					   margin: 5px;
+                          border: 1px solid black;
+					   border-radius: 5px;
+                          }
+
+                          QPushButton:pressed {
+                          background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                          stop: 0 #FF7832, stop: 1 #FF9739);
+                          }</string>
+           </property>
+           <property name="text">
+            <string>Calculate</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0" colspan="2">
+          <widget class="QLabel" name="label_2">
+           <property name="maximumSize">
+            <size>
+             <width>200</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Payment period (in months)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="2" colspan="2">
+          <widget class="QDoubleSpinBox" name="doubleSpinBox_interestRate">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>400</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="singleStep">
+            <double>0.100000000000000</double>
+           </property>
+           <property name="value">
+            <double>10.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1" colspan="3">
+          <widget class="QRadioButton" name="radioButton_annuitent">
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>Annuity</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QLabel" name="label">
+           <property name="maximumSize">
+            <size>
+             <width>200</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Credit sum (total)</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>Deposit</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_7">
+       <item row="0" column="0">
+        <layout class="QGridLayout" name="gridLayout_6">
+         <item row="5" column="0" colspan="2">
+          <widget class="QLabel" name="label_14">
+           <property name="text">
+            <string>Tax rate (%)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="10" column="2" colspan="3">
+          <widget class="QComboBox" name="comboBox_refill">
+           <item>
+            <property name="text">
+             <string>No contributions</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>1 month</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>3 months</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>6 months</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>12 months</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="18" column="0" alignment="Qt::AlignRight">
+          <widget class="QLabel" name="label_22">
+           <property name="text">
+            <string>Total balance:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="2">
+          <widget class="QDoubleSpinBox" name="doubleSpinBox_interestRate_2">
+           <property name="singleStep">
+            <double>0.100000000000000</double>
+           </property>
+           <property name="value">
+            <double>10.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <widget class="QSpinBox" name="spinBox_monthTerm_2">
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="value">
+            <number>12</number>
+           </property>
+          </widget>
+         </item>
+         <item row="17" column="0" alignment="Qt::AlignRight">
+          <widget class="QLabel" name="label_12">
+           <property name="text">
+            <string>Total tax:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0" colspan="2">
+          <widget class="QLabel" name="label_17">
+           <property name="text">
+            <string>Interest rate (%)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="11" column="2" colspan="3">
+          <widget class="QComboBox" name="comboBox_withdrawal">
+           <item>
+            <property name="text">
+             <string>No withrdrawals</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>1 month</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>3 months</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>6 months</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>12 months</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="14" column="0" colspan="7">
+          <widget class="QPushButton" name="pushButton">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>160000</width>
+             <height>60</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+                          background-color: #FF9500;
+                          color: white;
+					   margin: 5px;
+                          border: 1px solid black;
+					   border-radius: 5px;
+                          }
+
+                          QPushButton:pressed {
+                          background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                          stop: 0 #FF7832, stop: 1 #FF9739);
+                          }</string>
+           </property>
+           <property name="text">
+            <string>Calculate</string>
+           </property>
+          </widget>
+         </item>
+         <item row="10" column="5" alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="label_11">
+           <property name="text">
+            <string>each by</string>
+           </property>
+          </widget>
+         </item>
+         <item row="11" column="0" colspan="2">
+          <widget class="QLabel" name="label_18">
+           <property name="text">
+            <string>Withdraw</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QLabel" name="label_19">
+           <property name="text">
+            <string>Initial investment</string>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="2" colspan="3">
+          <widget class="QComboBox" name="comboBox_period">
+           <item>
+            <property name="text">
+             <string>No compound interest</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>1 month</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>3 month</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="11" column="5" alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="label_10">
+           <property name="text">
+            <string>each by</string>
+           </property>
+          </widget>
+         </item>
+         <item row="16" column="0" alignment="Qt::AlignRight">
+          <widget class="QLabel" name="label_23">
+           <property name="text">
+            <string>Total interest:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="17" column="1" colspan="4">
+          <widget class="QLineEdit" name="lineEdit_sumNalog">
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="0" colspan="2">
+          <widget class="QLabel" name="label_16">
+           <property name="text">
+            <string>Compounding period</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0" colspan="2">
+          <widget class="QLabel" name="label_20">
+           <property name="text">
+            <string>Investment length (in months)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="10" column="6">
+          <widget class="QSpinBox" name="spinBox_refill">
+           <property name="minimum">
+            <number>100</number>
+           </property>
+           <property name="maximum">
+            <number>100000</number>
+           </property>
+           <property name="singleStep">
+            <number>100</number>
+           </property>
+           <property name="value">
+            <number>1000</number>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="2">
+          <widget class="QDoubleSpinBox" name="doubleSpinBox_nalogRate">
+           <property name="singleStep">
+            <double>0.100000000000000</double>
+           </property>
+           <property name="value">
+            <double>5.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="18" column="1" colspan="4">
+          <widget class="QLineEdit" name="lineEdit_sumDepositEnd">
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="10" column="0" colspan="2">
+          <widget class="QLabel" name="label_21">
+           <property name="text">
+            <string>Contribute</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QSpinBox" name="spinBox_sumDeposit">
+           <property name="maximum">
+            <number>999999999</number>
+           </property>
+           <property name="singleStep">
+            <number>100</number>
+           </property>
+           <property name="value">
+            <number>10000</number>
+           </property>
+          </widget>
+         </item>
+         <item row="16" column="1" colspan="4">
+          <widget class="QLineEdit" name="lineEdit_sumPercent">
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="11" column="6">
+          <widget class="QSpinBox" name="spinBox_withdrawal">
+           <property name="minimum">
+            <number>100</number>
+           </property>
+           <property name="maximum">
+            <number>100000</number>
+           </property>
+           <property name="singleStep">
+            <number>100</number>
+           </property>
+           <property name="value">
+            <number>1000</number>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0" colspan="7">
+          <widget class="QCheckBox" name="checkBox_capital">
+           <property name="text">
+            <string>Capitalize interest ↓</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
